@@ -76,7 +76,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
                           Password
                         </label>
                         <input
-                          type="text"
+                          type="password"
                           id="password"
                           value={userData.password}
                           onChange={handleChange}
@@ -85,7 +85,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
                         />
                       </div>
                       <div
-                        className="w-full text-center bg-parkit-200 font-bold p-2 rounded-lg mt-2 cursor-pointer  "
+                        className="w-full text-center bg-violet-700 font-bold p-2 rounded-lg mt-2 cursor-pointer hover:bg-violet-600 "
                         onClick={submit}
                       >
                         Sign In

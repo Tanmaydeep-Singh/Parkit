@@ -116,7 +116,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
                           Password
                         </label>
                         <input
-                          type="text"
+                          type="password"
                           id="password"
                           value={userData.password}
                           onChange={handleChange}
@@ -125,7 +125,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
                         />
                       </div>
                       <button
-                        className="w-full text-center bg-parkit-200 font-bold p-2 rounded-lg mt-2 cursor-pointer  "
+                        className="w-full text-center bg-violet-600  font-bold p-2 rounded-lg mt-2 cursor-pointer hover:bg-violet-700  "
                         onClick={submit}
                       >
                         Sign Up
