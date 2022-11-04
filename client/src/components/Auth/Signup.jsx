@@ -1,6 +1,7 @@
 import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { signup } from "../../firebase";
 
 const Signup = ({ isOpen, setIsOpen }) => {
   const [userData, setUserData] = useState({
@@ -22,6 +23,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
   const submit = async (e) => {
     e.preventDefault();
     closeModal();
+    await signup(userData.email,userData.password);
     setUserData({ fullName: "", email: "", password: "" });
   };
 
