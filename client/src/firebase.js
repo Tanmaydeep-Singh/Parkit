@@ -1,6 +1,8 @@
-import firebase, { initializeApp } from 'firebase/app';
+import  { initializeApp,} from 'firebase/app';
 import { useEffect,useState  } from "react";
-import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import {getFirestore,setDoc,getDocs, doc} from 'firebase/firestore';
+import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut , signInWithEmailAndPassword, } from 'firebase/auth';
+
 
 const firebaseconfig = {
     apiKey: "AIzaSyAZNsYjdGO4006yNZ4ubOZLKw5Va5j5ZEA",
@@ -15,12 +17,45 @@ const firebaseconfig = {
 
 const app = initializeApp(firebaseconfig);
 const auth = getAuth();
+const db = getFirestore(app);
 
-export function signup(email,password) {
-  createUserWithEmailAndPassword(auth,email,password);
+export async function signup(email,password,name) {
+  const user =  await createUserWithEmailAndPassword(auth,email,password);
+   console.log(user);
+   
+  
+   
+    try {
+
+     const files =  setDoc(doc(db,"users", user.user.uid),{
+        name:name,
+        email:email,
+        transections:[]
+      } )
+      // const files = await addDoc(collecti,{
+      //   _i
+      //   email: email,
+      //   name: name,
+      //   transections: []
+
+      // })
+      console.log(files);
+    } catch (error) {
+      alert("error");
+    
+   }
+  // const coll =  collection(db,'users');
+  // const files = await getDocs(coll);
+  // console.log(files);
 }
 
-export function useaut() {
+export async function  signin (email,password) {
+ signInWithEmailAndPassword(auth,email,password);
+
+
+}
+
+export function useAut() {
   const [currentuse, setcurrentuse] = useState();
 
     useEffect(() => {
@@ -29,4 +64,7 @@ export function useaut() {
     }, []);
 
   return currentuse;
+}
+export function signout() {
+  signOut(auth);
 }

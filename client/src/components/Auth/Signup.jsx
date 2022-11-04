@@ -25,7 +25,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
     closeModal();
    
    try {
-    signup(userData.email,userData.password);
+    signup(userData.email,userData.password,userData.fullName);
     
    } catch (error) {
     alert("error!");

@@ -1,6 +1,7 @@
 import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { signin } from "../../firebase";
 
 const Signin = ({ isOpen, setIsOpen }) => {
   const [userData, setUserData] = useState({
@@ -20,6 +21,12 @@ const Signin = ({ isOpen, setIsOpen }) => {
   const submit = async () => {
     setloaing(true);
     closeModal();
+    try {
+      signin(userData.email,userData.password);
+    } catch (error) {
+      alert("inv ali user i!");
+      
+    }
     setUserData({
       email: "",
       password: "",
