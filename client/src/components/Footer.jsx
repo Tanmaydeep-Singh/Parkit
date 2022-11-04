@@ -9,9 +9,9 @@ import {
 
 const Footer = () => {
   return (
-    <div className='w-screen h-screen relative'>
+    <div className='max-w-auto h-screen relative'>
     
-    <div className='w-full bg-gray-300 py-5 absolute bottom-0 rounded-t-lg  '>
+    <div className='w-full dark:bg-gray-900 py-10 absolute bottom-0  text-white'>
       <div className='max-w-[1240px] mx-auto flex flex-col px-4 '>
         <div className='sm:flex text-center justify-between items-center'>
           <h1>Parkit.</h1>
@@ -25,18 +25,18 @@ const Footer = () => {
         </div>
         <div className='flex justify-between'>
           <ul className='lg:flex '>
-            <li className='px-2' >About</li>
-            <li className='px-2' >Partnerships</li>
-            <li className='px-2' >Careers</li>
-            <li className='px-2' >Newsroom</li>
-            <li className='px-2' >Advertising</li>
+            <li className='pr-3' >About</li>
+            <li className='pr-3' >Partnerships</li>
+            <li className='pr-3' >Careers</li>
+            <li className='pr-3' >Newsroom</li>
+            <li className='pr-3' >Advertising</li>
           </ul>
           <ul className='text-right lg:flex'>
-            <li className='px-2' >Home</li>
-            <li className='px-2' >Destinations</li>
-            <li className='px-2' >Travel</li>
-            <li className='px-2' >View</li>
-            <li className='px-2' >Book</li>
+            <li className='pl-3' >Home</li>
+            <li className='pl-3' >Destinations</li>
+            <li className='pl-3' >Travel</li>
+            <li className='pl-3' >View</li>
+            <li className='pl-3' >Book</li>
           </ul>
         </div>
       </div>
