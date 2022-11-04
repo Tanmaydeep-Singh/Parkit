@@ -23,7 +23,13 @@ const Signup = ({ isOpen, setIsOpen }) => {
   const submit = async (e) => {
     e.preventDefault();
     closeModal();
-    await signup(userData.email,userData.password);
+   
+   try {
+    signup(userData.email,userData.password);
+    
+   } catch (error) {
+    alert("error!");
+   }
     setUserData({ fullName: "", email: "", password: "" });
   };
 

@@ -12,7 +12,8 @@ export  function autprovider({children}) {
 
  function signup(email,password) {
 
-    auth.crea
+   
+    auth.createUserWithEmailAndPassword()
     
  }
 

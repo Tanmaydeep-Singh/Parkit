@@ -7,6 +7,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
     email: "",
     password: "",
   });
+  const [loaing, setloaing] = useState(false);
 
   const handleChange = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -17,6 +18,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
   };
 
   const submit = async () => {
+    setloaing(true);
     closeModal();
     setUserData({
       email: "",
@@ -84,12 +86,13 @@ const Signin = ({ isOpen, setIsOpen }) => {
                           className="w-full border border-parkit-200 px-3 py-2  rounded-lg focus:border-parkit-100"
                         />
                       </div>
-                      <div
+                      <button
+                         disabled={loaing}
                         className="w-full text-center bg-violet-700 font-bold p-2 rounded-lg mt-2 cursor-pointer hover:bg-violet-600 "
                         onClick={submit}
                       >
                         Sign In
-                      </div>
+                      </button>
                     </form>
                   </div>
                 </Dialog.Panel>
