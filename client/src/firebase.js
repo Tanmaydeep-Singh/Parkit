@@ -20,33 +20,32 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 export async function signup(email,password,name) {
-  const user =  await createUserWithEmailAndPassword(auth,email,password);
+  var files;
+  var user;
+   try {
+     user =  await createUserWithEmailAndPassword(auth,email,password);
    console.log(user);
+   } catch (error) {
+    alert("error1");
+   }
    
   
-   
+  if(user){
     try {
-
-     const files =  setDoc(doc(db,"users", user.user.uid),{
+      
+      files =  setDoc(doc(db,"users", user.user.uid),{
         name:name,
         email:email,
         transections:[]
       } )
-      // const files = await addDoc(collecti,{
-      //   _i
-      //   email: email,
-      //   name: name,
-      //   transections: []
-
-      // })
+    
       console.log(files);
     } catch (error) {
       alert("error");
     
    }
-  // const coll =  collection(db,'users');
-  // const files = await getDocs(coll);
-  // console.log(files);
+  }
+
 }
 
 export async function  signin (email,password) {
