@@ -25,7 +25,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
     try {
       login(userData.email, userData.password);
     } catch (error) {
-      alert("invalid user id!");
+      alert("Invalid user id !!");
     }
     setUserData({
       email: "",

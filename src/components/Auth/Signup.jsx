@@ -29,6 +29,8 @@ const Signup = ({ isOpen, setIsOpen }) => {
         userData.email,
         userData.password,
         userData.fullName,
+        userData.DLNumber,
+        userData.phoneNo
       );
     } catch (error) {
       alert("error!");

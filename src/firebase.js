@@ -25,7 +25,7 @@ const app = initializeApp(firebaseconfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
-export async function signup(email, password, name) {
+export async function signup(email, password, name, dlnumber, phone) {
   var files;
   var user;
   console.log(email);
@@ -34,7 +34,7 @@ export async function signup(email, password, name) {
     user = await createUserWithEmailAndPassword(auth, email, password);
     console.log(user);
   } catch (error) {
-    alert("error1");
+    alert("Error in Signing up !!");
   }
 
   if (user) {
@@ -42,12 +42,14 @@ export async function signup(email, password, name) {
       files = setDoc(doc(db, "users", user.user.uid), {
         name: name,
         email: email,
+        DLNO: dlnumber,
+        phoneNumber: phone,
         transactions: [],
       });
 
       console.log(files);
     } catch (error) {
-      alert("error");
+      alert("Error in setting up the data");
     }
   }
 }
@@ -57,7 +59,7 @@ export const login = async (email, password) => {
     const user = await signInWithEmailAndPassword(auth, email, password);
     console.log(user);
   } catch (error) {
-    alert("errormass");
+    alert("Error in Signing in !!");
   }
 };
 
