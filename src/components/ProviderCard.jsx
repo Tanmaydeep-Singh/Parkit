@@ -3,7 +3,7 @@ import React from 'react'
 function ProviderCard(props) {
   return (
     <div class=" m-4 w-60 mt-8 rounded-lg overflow-hidden shadow-lg  bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200">
-  <img class="w-40 w-40 m-auto aspect-square rounded-lg pt-2" src={props.img} alt="Sunset in the mountains" />
+  <img class=" w-40 m-auto aspect-square rounded-lg pt-2" src={props.img} alt="Sunset in the mountains" />
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2"> {props.name} </div>
     <p class="text-gray-700 text-base">{props.walletAddress}
