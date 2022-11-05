@@ -1,8 +1,14 @@
 import React from "react";
 import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { login } from "../../firebase";
+
+// react-router-dom
 import { useNavigate } from "react-router-dom";
+
+// headless-ui
+import { Dialog, Transition } from "@headlessui/react";
+
+// firebase
+import { login } from "../../firebase";
 
 const Signin = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
@@ -10,7 +16,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
     email: "",
     password: "",
   });
-  const [loaing, setloaing] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -22,8 +28,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
 
   const submit = async (e) => {
     e.preventDefault();
-    setloaing(true);
-
+    setLoading(true);
     closeModal();
     try {
       login(userData.email, userData.password);
@@ -34,10 +39,9 @@ const Signin = ({ isOpen, setIsOpen }) => {
       email: "",
       password: "",
     });
-    setloaing(false);
+    setLoading(false);
     navigate("/auth");
   };
-
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -99,7 +103,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
                         />
                       </div>
                       <button
-                        disabled={loaing}
+                        disabled={loading}
                         className="w-full text-center bg-violet-700 font-bold p-2 rounded-lg mt-2 cursor-pointer hover:bg-violet-600 "
                         onClick={submit}
                       >

@@ -1,14 +1,18 @@
-import React from "react";
-import { FaUserAlt, FaSignOutAlt, FaWallet } from "react-icons/fa";
+import React, { useState } from "react";
+
+// react-router-dom
+import { useNavigate } from "react-router-dom";
+
+// react-icons
 import { AiFillSetting } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaUserAlt, FaSignOutAlt, FaWallet } from "react-icons/fa";
 
+// layouts
+import BookingLayout from "../components/layout/BookingLayout";
+
+// firebase
 import { signout } from "../firebase";
-import { useState } from "react";
-
-import { useNavigate } from "react-router-dom";
-import DefaultLayout from "../components/layout/DefaultLayout";
-import Home from "./Home";
 
 const BookingsSm = () => {
   const navigate = useNavigate();
@@ -350,4 +354,4 @@ const Bookings = () => {
   );
 };
 
-export default DefaultLayout(Bookings);
+export default BookingLayout(Bookings);

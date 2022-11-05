@@ -1,5 +1,10 @@
 import React, { useState } from "react";
+
+// react-icons
 import { FaUserAlt } from "react-icons/fa";
+
+// assets
+import Logo from "../../assets/images/logo.jpeg";
 
 // components
 import Signin from "../Auth/Signin";
@@ -29,13 +34,13 @@ const MobileNav = ({
   return (
     <div className=" flex w-full items-center justify-between lg:hidden">
       <div className="w-28">
-        <img src="" alt="Logo" className="w-full h-full" />
+        <img src={Logo} alt="Logo" className="w-full h-full" />
       </div>
       <div className="flex items-center gap-3 relative">
         <button className="bg-parkit-200 text-white py-2 px-3 rounded-full">
           Park it
         </button>
-        {user?.fullName ? (
+        {user?.name ? (
           <>
             <div
               onClick={() => setIsDropDownOpen((prev) => !prev)}
@@ -99,12 +104,12 @@ const LargeNav = ({
     <div className="w-full items-center justify-between hidden lg:flex px-14">
       <div className="gap-4 items-center justify-around flex">
         <div className="w-20">
-          <img src="" alt="Logo" className="w-full h-full" />
+          <img src={Logo} alt="Logo" className="w-full h-full" />
         </div>
       </div>
 
       <div className="flex items-center gap-3 relative">
-        {user?.fullName ? (
+        {user?.name ? (
           <>
             <div
               onClick={() => setIsDropDownOpen((prev) => !prev)}
@@ -152,7 +157,7 @@ const Navbar = () => {
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const user = {
-    // fullName: "Daksh",
+    // name: "",
   };
 
   return (

@@ -1,8 +1,14 @@
 import React from "react";
 import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { signup } from "../../firebase";
+
+// react-router-dom
 import { useNavigate } from "react-router-dom";
+
+// headless-ui
+import { Dialog, Transition } from "@headlessui/react";
+
+// firebase
+import { signup } from "../../firebase";
 
 const Signup = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();

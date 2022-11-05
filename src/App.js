@@ -1,7 +1,11 @@
 import "./App.css";
-import Signin from "./pages/Signin_page";
+
+// react-router-dom
 import { Routes, Route } from "react-router-dom";
+
+// components
 import Home from "./pages/Home";
+import Signin from "./pages/Signin_page";
 
 function App() {
   return (

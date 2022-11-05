@@ -2,9 +2,9 @@ import React from "react";
 
 // components
 import Footer from "../Footer";
-import Navbar from "../Navbar/index";
+import Navbar from "../Navbar/booking_navbar";
 
-const DefaultLayout =
+const BookingLayout =
   (Component) =>
   ({ ...props }) => {
     return (
@@ -16,4 +16,4 @@ const DefaultLayout =
     );
   };
 
-export default DefaultLayout;
+export default BookingLayout;

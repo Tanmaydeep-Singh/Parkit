@@ -1,7 +1,9 @@
 import React from "react";
+
+// components
 import Bookings from "./Bookings";
 
-import DefaultLayout from "../components/layout/DefaultLayout";
+// firebase
 import { useAuth } from "../firebase";
 
 const Signin = () => {

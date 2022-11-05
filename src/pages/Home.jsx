@@ -1,14 +1,29 @@
 import React from "react";
+
+// react-carousel
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+// layouts
 import DefaultLayout from "../components/layout/DefaultLayout";
+
+// components
 import ProviderCard from "../components/ProviderCard";
 
 function Home() {
   return (
-    <div>
-      <div className=" h-547.2   bg-gradient-to-r from-cyan-500 to-blue-500">
-        <h1 className="align-bottom">Most Popular Providers.</h1>
-      </div>
-
+    <>
+      <Carousel className="w-1/2 mx-auto my-10 ">
+        <div>
+          <img src="https://picsum.photos/200/300" />
+        </div>
+        <div>
+          <img src="https://picsum.photos/200/300" />
+        </div>
+        <div>
+          <img src="https://picsum.photos/200/300" />
+        </div>
+      </Carousel>
       <div className="w-11/12 m-auto  grid grid-cols-5">
         <ProviderCard
           img="https://picsum.photos/200/300"
@@ -65,7 +80,7 @@ function Home() {
           location="here"
         />
       </div>
-    </div>
+    </>
   );
 }
 
