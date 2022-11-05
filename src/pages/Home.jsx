@@ -9,7 +9,7 @@ function Home() {
         <h1 className="align-bottom">Most Popular Providers.</h1>
       </div>
 
-      <div className="w-11/12 m-auto  grid grid-cols-5">
+      <div className="w-10/12 m-auto  grid grid-cols-1  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 justify-items-center">
         <ProviderCard
           img="https://picsum.photos/200/300"
           name="Tanmaydeep"
