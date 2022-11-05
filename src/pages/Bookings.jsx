@@ -177,17 +177,19 @@ const BookingsSm = () => {
 };
 
 const BookingsLg = () => {
-  const handlesignout = () => {
+  const navigate = useNavigate();
+  const handlesignout = (e) => {
+    e.preventDefault();
     signout();
     console.log("Sign out successful !! ");
+    navigate(-1);
   };
 
   return (
     <>
       <div className="flex">
-      <div className="px-6 fixed h-80vh bg-gray-500 rounded-tr-md rounded-br-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-70 border border-l-0 border-gray-100 justify-center rounded-md ">
-
-        {/* <div className="px-6 fixed h-80vh bg-white rounded-tr-md rounded-br-md border-l-0 border-gray-100 justify-center rounded-md "> */}
+        <div className="px-6 fixed h-80vh bg-gray-500 rounded-tr-md rounded-br-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-70 border border-l-0 border-gray-100 justify-center rounded-md ">
+          {/* <div className="px-6 fixed h-80vh bg-white rounded-tr-md rounded-br-md border-l-0 border-gray-100 justify-center rounded-md "> */}
           <div className="flex m-5 align-center justify-center flex-wrap gap-2 text-lg hover:bg-gray-200">
             <FaUserAlt className="m-auto mx-0" /> ORDERS
           </div>
@@ -227,7 +229,7 @@ const BookingsLg = () => {
 
               <button
                 type="button"
-                className="text-white bg-blue-600  focus:ring-blue-300 font-medium rounded-md text-xs px-5 py-2.5 text-center mr-0 md:mr-0 w-1/2 rounded"
+                className="text-white bg-blue-600  focus:ring-blue-300 font-medium rounded-md text-xs px-5 py-2.5 text-center mr-0 md:mr-0 w-1/2"
               >
                 Book Again
               </button>
