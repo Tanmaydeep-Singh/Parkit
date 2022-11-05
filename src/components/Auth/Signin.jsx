@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { signin } from "../../firebase";
+import { login } from "../../firebase";
 
 const Signin = ({ isOpen, setIsOpen }) => {
   const [userData, setUserData] = useState({
@@ -18,19 +18,20 @@ const Signin = ({ isOpen, setIsOpen }) => {
     setIsOpen(false);
   };
 
-  const submit = async () => {
+  const submit = async (e) => {
+    e.preventDefault();
     setloaing(true);
     closeModal();
     try {
-      signin(userData.email,userData.password);
+      login(userData.email, userData.password);
     } catch (error) {
-      alert("inv ali user i!");
-      
+      alert("invalid user id!");
     }
     setUserData({
       email: "",
       password: "",
     });
+    setloaing(false);
   };
 
   return (
@@ -94,7 +95,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
                         />
                       </div>
                       <button
-                         disabled={loaing}
+                        disabled={loaing}
                         className="w-full text-center bg-violet-700 font-bold p-2 rounded-lg mt-2 cursor-pointer hover:bg-violet-600 "
                         onClick={submit}
                       >

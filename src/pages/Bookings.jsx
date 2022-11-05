@@ -1,9 +1,15 @@
 import React from "react";
-import { FaUserAlt,FaSignOutAlt,FaWallet } from "react-icons/fa";
-import { AiFillSetting} from "react-icons/ai";
+import { FaUserAlt, FaSignOutAlt, FaWallet } from "react-icons/fa";
+import { AiFillSetting } from "react-icons/ai";
 
+import { signout } from "../firebase";
 
 const Bookings = () => {
+  const handlesignout = () => {
+    signout();
+    console.log("hi");
+  };
+
   return (
     <>
       <div className="flex m-0 my-8">
@@ -17,8 +23,11 @@ const Bookings = () => {
           <div className="flex my-5 align-center justify-center flex-wrap gap-2 text-xl hover:bg-gray-200">
             <FaWallet className="m-auto mx-0" /> WALLET
           </div>
-          <div className="flex my-5 align-center justify-center flex-wrap gap-2 text-xl  hover:bg-gray-200">
-            <FaSignOutAlt className="m-auto mx-0" /> Logout 
+          <div
+            onClick={handlesignout}
+            className="flex my-5 align-center justify-center flex-wrap gap-2 text-xl  hover:bg-gray-200"
+          >
+            <FaSignOutAlt className="m-auto mx-0 " /> Logout
           </div>
         </div>
         <div className="flex flex-col m-4 p-4 w-2/3">

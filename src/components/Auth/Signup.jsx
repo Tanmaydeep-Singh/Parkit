@@ -23,14 +23,23 @@ const Signup = ({ isOpen, setIsOpen }) => {
   const submit = async (e) => {
     e.preventDefault();
     closeModal();
-   
-   try {
-    signup(userData.email,userData.password,userData.fullName);
-    
-   } catch (error) {
-    alert("error!");
-   }
-    setUserData({ fullName: "", email: "", password: "" });
+
+    try {
+      signup(
+        userData.email,
+        userData.password,
+        userData.fullName,
+      );
+    } catch (error) {
+      alert("error!");
+    }
+    setUserData({
+      fullName: "",
+      email: "",
+      password: "",
+      DLNumber: "",
+      phoneNo: "",
+    });
   };
 
   return (

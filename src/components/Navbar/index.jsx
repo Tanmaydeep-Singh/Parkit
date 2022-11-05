@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
-// import {logo} from "../../assets/images/logo.jpeg";
-import { useAut } from "../../firebase"; 
 
 // components
 import Signin from "../Auth/Signin";
@@ -14,7 +12,6 @@ const MobileNav = ({
   signIn,
   signUp,
 }) => {
-  const currentuser = useAut();
   const SignInFun = () => {
     signIn();
     setIsDropDownOpen(false);
@@ -33,7 +30,6 @@ const MobileNav = ({
     <div className=" flex w-full items-center justify-between lg:hidden">
       <div className="w-28">
         <img src="" alt="logolo" className="w-full h-full" />
-     
       </div>
       <div className="flex items-center gap-3 relative">
         <button className="bg-parkit-200 text-white py-2 px-3 rounded-full">
@@ -85,7 +81,6 @@ const LargeNav = ({
   signIn,
   signUp,
 }) => {
-  const currentuser = useAut();
   const SignInFun = () => {
     signIn();
     setIsDropDownOpen(false);
@@ -105,10 +100,8 @@ const LargeNav = ({
       <div className="gap-4 items-center justify-around flex">
         <div className="w-20">
           <img src="" alt="logolo" className="w-full h-full" />
-        
         </div>
       </div>
-      
 
       <div className="flex items-center gap-3 relative">
         {user?.fullName ? (
