@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Providers() {
-  return (
-    <div>Providers</div>
-  )
+  return <div>Providers</div>;
 }
 
-export default Providers
+export default Providers;

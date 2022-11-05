@@ -6,11 +6,18 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { signout } from "../firebase";
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+import DefaultLayout from "../components/layout/DefaultLayout";
+import Home from "./Home";
+
 const BookingsSm = () => {
+  const navigate = useNavigate();
   const [go, setGo] = useState(false);
-  const handlesignout = () => {
+  const handlesignout = (e) => {
+    e.preventDefault();
     signout();
     console.log("Sign out successful !! ");
+    navigate(-1);
   };
 
   const sidebar = () => {
@@ -339,4 +346,4 @@ const Bookings = () => {
   );
 };
 
-export default Bookings;
+export default DefaultLayout(Bookings);

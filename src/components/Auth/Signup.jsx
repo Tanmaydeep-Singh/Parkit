@@ -2,8 +2,10 @@ import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { signup } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Signup = ({ isOpen, setIsOpen }) => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     fullName: "",
     phoneNo: "",
@@ -23,7 +25,6 @@ const Signup = ({ isOpen, setIsOpen }) => {
   const submit = async (e) => {
     e.preventDefault();
     closeModal();
-
     try {
       signup(
         userData.email,
@@ -42,6 +43,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
       DLNumber: "",
       phoneNo: "",
     });
+    navigate("/auth");
   };
 
   return (
