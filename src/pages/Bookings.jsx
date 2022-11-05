@@ -1,22 +1,24 @@
 import React from "react";
-import { FaUserAlt } from "react-icons/fa";
+import { FaUserAlt,FaSignOutAlt,FaWallet } from "react-icons/fa";
+import { AiFillSetting} from "react-icons/ai";
+
 
 const Bookings = () => {
   return (
     <>
-      <div className="flex m-8">
-        <div className="flex flex-col m-4 p-4 w-1/3 bg-gray-400 ">
-          <div className="flex m-5 align-center justify-center flex-wrap gap-2 hover:bg-gray-200">
-            <FaUserAlt /> ORDERS
+      <div className="flex m-0 my-8">
+        <div className="flex flex-col m-0 py-4 w-1/3  bg-gray-400 justify-evenly rounded-md ">
+          <div className="flex my-5 align-center justify-center flex-wrap gap-2 text-xl hover:bg-gray-200">
+            <FaUserAlt className="m-auto mx-0" /> ORDERS
           </div>
-          <div className="flex m-5 align-center justify-center flex-wrap gap-2  hover:bg-gray-200">
-            <FaUserAlt /> SETTINGS
+          <div className="flex my-5 align-center justify-center flex-wrap gap-2 text-xl hover:bg-gray-200">
+            <AiFillSetting className="m-auto mx-0" /> SETTINGS
           </div>
-          <div className="flex m-5 align-center justify-center flex-wrap gap-2  hover:bg-gray-200">
-            <FaUserAlt /> WALLET
+          <div className="flex my-5 align-center justify-center flex-wrap gap-2 text-xl hover:bg-gray-200">
+            <FaWallet className="m-auto mx-0" /> WALLET
           </div>
-          <div className="flex m-5 align-center justify-center flex-wrap gap-2  hover:bg-gray-200">
-            <FaUserAlt /> ADDRESS
+          <div className="flex my-5 align-center justify-center flex-wrap gap-2 text-xl  hover:bg-gray-200">
+            <FaSignOutAlt className="m-auto mx-0" /> Logout 
           </div>
         </div>
         <div className="flex flex-col m-4 p-4 w-2/3">
