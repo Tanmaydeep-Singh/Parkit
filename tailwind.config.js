@@ -13,6 +13,10 @@ module.exports = {
       'large': '12px',
     },
     extend: {
+      height: {
+        '547.2':'60vh',
+      },
+      
       colors: {
         parkit: {
           100: "#404258",
